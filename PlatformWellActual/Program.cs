@@ -8,8 +8,8 @@ namespace PlatformWellActual
         {
             BusinessLogic.ProcessAPI processAPI = new BusinessLogic.ProcessAPI();
             Console.WriteLine("=================================================================================");
-            Console.WriteLine("Press R : For call api");
-            Console.WriteLine("Press Q : Exit the application");
+            Console.WriteLine("Press R + Enter : For call api");
+            Console.WriteLine("Press Q + Enter : Exit the application");
             Console.WriteLine("=================================================================================");
             while (true)
             {
