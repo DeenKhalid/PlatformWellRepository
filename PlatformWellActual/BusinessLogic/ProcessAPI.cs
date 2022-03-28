@@ -23,21 +23,24 @@ namespace PlatformWellActual.BusinessLogic
 
         public void Entry()
         {
-            PlatformWellDAL platformWellDAL = new PlatformWellDAL(Config);
+         
+           PlatformWellDAL platformWellDAL = new PlatformWellDAL(Config);
             try
             {
+                Console.WriteLine("Starting..");
                 if (string.IsNullOrEmpty(Token)) GetToken().GetAwaiter().GetResult();
                 platformWellDAL.DbExecuteNonResult(GetData().GetAwaiter().GetResult());
+                Console.WriteLine("Finish..");
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 throw;
             }
         }
 
         private async Task<List<PlatformModel>> GetData()
         {
-
             try
             {
                 Client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Token);

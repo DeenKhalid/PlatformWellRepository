@@ -6,10 +6,26 @@ namespace PlatformWellActual
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             BusinessLogic.ProcessAPI processAPI = new BusinessLogic.ProcessAPI();
-            processAPI.Entry();
+            Console.WriteLine("=================================================================================");
+            Console.WriteLine("Press R : For call api");
+            Console.WriteLine("Press Q : Exit the application");
+            Console.WriteLine("=================================================================================");
+            while (true)
+            {
+                switch (Console.ReadLine().ToUpper())
+                {
+                    case "R":
+                        processAPI.Entry();
+                        break;
+                    case "Q":
+                        Environment.Exit(0);
+                        break;
+                }
+            }
+
+                
+            
         }
     }
 }
